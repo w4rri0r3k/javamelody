@@ -1,4 +1,6 @@
 FROM anapsix/alpine-java:8_jdk_unlimited
+MAINTAINER w4rri0r3k "w4rri0r3k@gmail.com"
+
 
 RUN apk --update add tzdata && \
   cp /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && \
