@@ -11,4 +11,4 @@ VOLUME ["/tmp"]
 
 ADD https://github.com/javamelody/javamelody/releases/download/javamelody-core-1.74.0/javamelody-collector-server-1.74.0.war /opt/jm/
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-server", "-Xmx512m", "-jar", "--httpPort=8080", "--ajp13Port=8009","/opt/jm/javamelody-collector-server-1.74.0.war"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-server", "-Xmx512m", "-jar", "/opt/jm/javamelody-collector-server-1.74.0.war"]
