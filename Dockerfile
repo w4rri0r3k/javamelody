@@ -9,6 +9,6 @@ RUN apk --update add tzdata && \
 
 VOLUME ["/tmp"]
 
-ADD https://github.com/javamelody/javamelody/releases/download/javamelody-core-1.74.0/javamelody-collector-server-1.74.0.war /opt/jm/
+ADD https://github.com/javamelody/javamelody/releases/download/javamelody-core-1.76.0/javamelody-collector-server-1.76.0.war /opt/jm/
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-server", "-Xmx512m", "-jar", "/opt/jm/javamelody-collector-server-1.74.0.war"]
