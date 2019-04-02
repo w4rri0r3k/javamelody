@@ -1,6 +1,8 @@
 FROM anapsix/alpine-java:8_jdk_unlimited
 MAINTAINER w4rri0r3k "w4rri0r3k@gmail.com"
 
+ENV JM_VERSION 1.76.0
+
 RUN apk --update add tzdata && \
   cp /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && \
   echo "Europe/Warsaw" >  /etc/timezone && \
@@ -9,6 +11,6 @@ RUN apk --update add tzdata && \
 
 VOLUME ["/tmp"]
 
-ADD https://github.com/javamelody/javamelody/releases/download/javamelody-core-1.76.0/javamelody-collector-server-1.76.0.war /opt/jm/
+ADD https://github.com/javamelody/javamelody/releases/download/javamelody-core-$JM_VERSION/javamelody-collector-server-$JM_VERSION.war /opt/jm/jm.war
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-server", "-Xmx512m", "-jar", "/opt/jm/javamelody-collector-server-1.74.0.war"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-server", "-Xmx512m", "-jar", "/opt/jm/jm.war"]
