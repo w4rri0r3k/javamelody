@@ -1,7 +1,7 @@
 FROM anapsix/alpine-java:8_jdk_unlimited
 MAINTAINER w4rri0r3k "w4rri0r3k@gmail.com"
 
-ENV JM_VERSION 1.83.0
+ENV JM_VERSION 1.87.0
 
 RUN apk --update add tzdata && \
   cp /usr/share/zoneinfo/Europe/Warsaw /etc/localtime && \
